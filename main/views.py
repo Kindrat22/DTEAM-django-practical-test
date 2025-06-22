@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 from .models import CV
 import weasyprint
+from rest_framework import viewsets
+from .serializers import CVSerializer
 
 
 def cv_list(request):
@@ -23,3 +25,8 @@ def cv_pdf(request, pk):
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = f'attachment; filename="{filename}"'
     return response
+
+
+class CVViewSet(viewsets.ModelViewSet):
+    queryset = CV.objects.all()
+    serializer_class = CVSerializer
