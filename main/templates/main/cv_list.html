@@ -10,6 +10,9 @@
 <body>
 <div class="container mt-5">
     <h1 class="mb-4">CV List</h1>
+    <div class="mb-3">
+        <a href="/logs/" class="btn btn-secondary">View Logs</a>
+    </div>
     <div class="list-group">
         {% for cv in cvs %}
             <a href="{% url 'cv_detail' cv.pk %}" class="list-group-item list-group-item-action">
