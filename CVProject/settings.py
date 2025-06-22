@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',  # Main app for CV management
     'rest_framework',  # Django REST framework
+    'audit',  # App for request logging
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'audit.middleware.RequestLogMiddleware',  # Custom request logging middleware
 ]
 
 ROOT_URLCONF = 'CVProject.urls'
