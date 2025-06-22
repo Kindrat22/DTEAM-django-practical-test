@@ -142,3 +142,5 @@ EMAIL_BACKEND = os.environ.get(
     'EMAIL_BACKEND', 'django.core.mail.backends.console.EmailBackend')
 DEFAULT_FROM_EMAIL = os.environ.get(
     'DEFAULT_FROM_EMAIL', 'noreply@example.com')
+
+OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')

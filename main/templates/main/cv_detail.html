@@ -9,6 +9,11 @@
 </head>
 <body>
 <div class="container mt-5">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
     <a href="/" class="btn btn-secondary mb-3">&larr; Back to List</a>
     <a href="{% url 'cv_pdf' cv.pk %}" class="btn btn-success mb-3 float-end">Download PDF</a>
     <form method="post" action="" class="mb-3">
@@ -16,6 +21,36 @@
         <div class="input-group">
             <input type="email" name="email" class="form-control" placeholder="Enter email to send PDF" required>
             <button type="submit" class="btn btn-primary">Send PDF to Email</button>
+        </div>
+    </form>
+    <form method="post" action="" class="mb-3">
+        {% csrf_token %}
+        <div class="row g-2 align-items-center">
+            <div class="col-auto">
+                <select name="language" class="form-select" required>
+                    <option value="">Select language</option>
+                    <option value="kw">Cornish</option>
+                    <option value="gv">Manx</option>
+                    <option value="br">Breton</option>
+                    <option value="iu">Inuktitut</option>
+                    <option value="kl">Kalaallisut</option>
+                    <option value="rmy">Romani</option>
+                    <option value="oc">Occitan</option>
+                    <option value="lad">Ladino</option>
+                    <option value="se">Northern Sami</option>
+                    <option value="hsb">Upper Sorbian</option>
+                    <option value="csb">Kashubian</option>
+                    <option value="zza">Zazaki</option>
+                    <option value="cv">Chuvash</option>
+                    <option value="liv">Livonian</option>
+                    <option value="tsd">Tsakonian</option>
+                    <option value="srm">Saramaccan</option>
+                    <option value="bi">Bislama</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <button type="submit" name="translate" value="1" class="btn btn-warning">Translate</button>
+            </div>
         </div>
     </form>
     <div class="card">
@@ -31,6 +66,16 @@
             <p>{{ cv.contacts }}</p>
         </div>
     </div>
+    {% if translated %}
+    <div class="card mt-4 border-warning">
+        <div class="card-header bg-warning text-dark">
+            Translated CV ({{ selected_language }})
+        </div>
+        <div class="card-body">
+            <pre>{{ translated }}</pre>
+        </div>
+    </div>
+    {% endif %}
 </div>
 </body>
 </html>
