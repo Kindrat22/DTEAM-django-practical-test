@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',  # Main app for CV management
+    'rest_framework',  # Django REST framework
 ]
 
 MIDDLEWARE = [
