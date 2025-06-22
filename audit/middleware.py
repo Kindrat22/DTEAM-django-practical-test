@@ -1,6 +1,7 @@
 from django.utils.deprecation import MiddlewareMixin
 from .models import RequestLog
 
+
 class RequestLogMiddleware(MiddlewareMixin):
     def process_request(self, request):
         user = request.user if request.user.is_authenticated else None

@@ -3,11 +3,13 @@ from django.contrib.auth import get_user_model
 from .models import RequestLog
 from .middleware import RequestLogMiddleware
 
+
 class RequestLogMiddlewareTest(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
         self.middleware = RequestLogMiddleware()
-        self.user = get_user_model().objects.create_user(username='testuser', password='testpass')
+        self.user = get_user_model().objects.create_user(
+            username='testuser', password='testpass')
 
     def test_log_created_for_request(self):
         request = self.factory.get('/test-path/?foo=bar')

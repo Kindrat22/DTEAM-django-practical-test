@@ -27,6 +27,10 @@ def cv_pdf(request, pk):
     return response
 
 
+def settings_page(request):
+    return render(request, 'main/settings.html')
+
+
 class CVViewSet(viewsets.ModelViewSet):
     queryset = CV.objects.all()
     serializer_class = CVSerializer
