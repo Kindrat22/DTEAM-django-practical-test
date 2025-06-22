@@ -1,0 +1,38 @@
+[
+  {
+    "model": "main.cv",
+    "pk": 1,
+    "fields": {
+      "firstname": "Volodymyr",
+      "lastname": "Kindrat",
+      "bio": "Experienced software developer with a passion for building impactful solutions.",
+      "skills": "Python, Django, JavaScript, React",
+      "projects": "Portfolio Website, E-commerce Platform, Blog Engine",
+      "contacts": "Volodymyr.Kindrat@example.com, +123456789, linkedin.com/in/VolodymyrKindrat"
+    }
+  },
+  {
+    "model": "main.cv",
+    "pk": 2,
+    "fields": {
+      "firstname": "Anna",
+      "lastname": "Smith",
+      "bio": "Full-stack developer with a focus on frontend technologies and UX design.",
+      "skills": "HTML, CSS, JavaScript, Vue.js, Figma",
+      "projects": "Landing Page Redesign, Mobile App UI, Dashboard Analytics",
+      "contacts": "anna.smith@example.com, +987654321, github.com/annasmith"
+    }
+  },
+  {
+    "model": "main.cv",
+    "pk": 3,
+    "fields": {
+      "firstname": "Michael",
+      "lastname": "Brown",
+      "bio": "Backend engineer specializing in APIs and cloud infrastructure.",
+      "skills": "Python, Django, REST, AWS, Docker",
+      "projects": "API Gateway, Serverless Functions, CI/CD Pipeline",
+      "contacts": "michael.brown@example.com, +192837465, twitter.com/mikebrown"
+    }
+  }
+]

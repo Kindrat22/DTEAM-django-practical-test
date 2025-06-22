@@ -157,6 +157,26 @@ If needed, use this referral link to get $200 in credits:
 
 ---
 
+## 📦 Loading Sample Data (Fixtures)
+
+To load the sample CV data into your database, run the following command from your project root:
+
+```
+python manage.py loaddata main/fixtures/sample_cv.json
+```
+
+This will create at least one sample CV instance in your database for testing and development.
+
+## 🧪 Running Tests
+
+To run the tests for the CV list and detail views, use:
+
+```
+python manage.py test main
+```
+
+This will execute the basic tests for your views and ensure everything is working as expected.
+
 ## ✅ Final Notes
 
 - Complete **each task thoroughly**
