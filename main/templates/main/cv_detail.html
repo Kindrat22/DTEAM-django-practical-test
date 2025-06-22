@@ -10,6 +10,7 @@
 <body>
 <div class="container mt-5">
     <a href="/" class="btn btn-secondary mb-3">&larr; Back to List</a>
+    <a href="{% url 'cv_pdf' cv.pk %}" class="btn btn-success mb-3 float-end">Download PDF</a>
     <div class="card">
         <div class="card-body">
             <h2 class="card-title">{{ cv.firstname }} {{ cv.lastname }}</h2>
